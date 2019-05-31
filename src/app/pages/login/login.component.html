@@ -1,16 +1,17 @@
 <div class="container">
-  <div class="formulario">
+  <div class="formulario mat-elevation-z7">
     <form #login="ngForm">
+      <p>Sign In Pitagoras</p>
       <mat-form-field>
-        <input matInput placeholder="Login" />
+        <input matInput placeholder="Login" type="email" required email />
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Senha" />
+        <input matInput placeholder="Senha" type="password" required minLength="6"/>
       </mat-form-field>
 
       <div>
-        <button mat-button type="submit">Entrar</button>
-        <button mat-button type="reset">Sair</button>
+        <button mat-button color="primary" [disabled]="login.form.invalid" type="submit">Entrar</button>
+        <button mat-button color="warn" type="reset">Limpar</button>
       </div>
     </form>
   </div>
